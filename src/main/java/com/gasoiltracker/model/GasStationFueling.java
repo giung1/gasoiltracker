@@ -1,8 +1,9 @@
 package com.gasoiltracker.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class GasStationFueling {
+public class GasStationFueling implements Serializable{
     private LocalDate date;
     private String driver;
     private int quantity;

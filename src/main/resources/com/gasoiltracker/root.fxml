@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gasoiltracker.controller.RootController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="431.0" prefWidth="640.0" style="-fx-background-color: #0b0e35;" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="addGasStation" layoutX="403.0" layoutY="341.0" mnemonicParsing="false" onAction="#addGasStation" prefHeight="36.0" prefWidth="192.0" style="-fx-background-color: #f1f1f1;" text="Agregar estacion de servicio" textAlignment="CENTER" />
+            <TableView fx:id="tblGasStations" layoutX="49.0" layoutY="75.0" prefHeight="250.0" prefWidth="546.0" style="-fx-background-color: f1f1f1;">
+              <columns>
+                <TableColumn fx:id="colGasStation" prefWidth="220.00003051757812" style="backgroundcolor: f1f1f1;" text="Nombre" />
+                  <TableColumn fx:id="colLocality" prefWidth="212.6666259765625" text="Localidad" />
+                  <TableColumn fx:id="colLitros" prefWidth="116.66668701171875" style="background-color: f1f1f1;" text="Litros actuales" />
+              </columns>
+            </TableView>
+            <Label layoutX="130.0" layoutY="24.0" text="Estaciones de servicio existentes" textFill="#bebebe">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Button fx:id="selectGasStation" layoutX="57.0" layoutY="341.0" mnemonicParsing="false" onAction="#selectGasStation" prefHeight="36.0" prefWidth="192.0" style="-fx-background-color: #f1f1f1;" text="Seleccionar" textAlignment="CENTER" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
