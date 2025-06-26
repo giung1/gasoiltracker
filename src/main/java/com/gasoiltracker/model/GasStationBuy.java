@@ -1,8 +1,9 @@
 package com.gasoiltracker.model;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 
-public class GasStationBuy {
+public class GasStationBuy implements Serializable {
     private LocalDate date;
     private int quantity;
     private String receipt;
@@ -22,9 +23,11 @@ public class GasStationBuy {
     public int getQuantity() {
         return quantity;
     }
+    
     public String getReceipt() {
         return receipt;
     }
+
     public void setDate(LocalDate date) {
         this.date = date;
     }
