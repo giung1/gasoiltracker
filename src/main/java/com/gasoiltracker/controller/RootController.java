@@ -101,6 +101,15 @@ public class RootController {
         }
     }
 
+     @FXML
+    void deleteGasStation(ActionEvent event) {
+        GasStation gasStationToDelete = tblGasStations.getSelectionModel().getSelectedItem();
+        gasStationList.remove(currentGasStation);
+        File gasStationToDeleteFile = new File(Paths.SUBPATH+buildGasStationFilename(gasStationToDelete)+".obj");
+        System.out.println(gasStationToDeleteFile.delete());
+        refreshStationList();
+    }
+
     @FXML
     private void initialize(){
         colGasStation.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -110,6 +119,7 @@ public class RootController {
         refreshStationList();
     }
 
+    
     public void refreshStationList() {
         File filesDirectory = new File(FileObjectsLoader.SUBPATH);
         String[] stationList = filesDirectory.list();
@@ -123,6 +133,10 @@ public class RootController {
             }
         }
         tblGasStations.refresh();
+    }
+
+    public String buildGasStationFilename(GasStation gasStation){
+         return gasStation.getName() + "-" + gasStation.getLocality();
     }
 
     public String getCurrentGasStationFile(){
