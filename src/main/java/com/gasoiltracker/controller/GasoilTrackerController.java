@@ -128,11 +128,16 @@ public class GasoilTrackerController {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setResizable(false);
         ButtonType okButton = new ButtonType("Aceptar");
-        dialog.setTitle("Cuidado!");
+        dialog.setTitle("Información");
         dialog.setHeaderText(message);
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.getDialogPane().getButtonTypes().add(okButton);
         dialog.initOwner(getStage());
+        
+        // Apply CSS styling to dialog
+        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/com/gasoiltracker/styles.css").toExternalForm());
+        dialog.getDialogPane().getStyleClass().add("dialog-pane");
+        
         dialog.showAndWait();
     }
 

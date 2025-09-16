@@ -1,24 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="257.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gasoiltracker.controller.GasStationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" styleClass="gas-station-dialog" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gasoiltracker.controller.GasStationController">
    <children>
-      <Label layoutX="61.0" layoutY="30.0" prefHeight="54.0" prefWidth="478.0" text="DATOS DE LA ESTACION DE SERVICIO">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="60.0" layoutY="105.0" prefHeight="18.0" prefWidth="62.0" text="Nombre:" />
-      <Label layoutX="60.0" layoutY="155.0" text="Localidad:" />
-      <Label layoutX="60.0" layoutY="204.0" prefHeight="18.0" prefWidth="85.0" text="Litros actuales:" />
-      <TextField fx:id="txtNombreEstacion" layoutX="146.0" layoutY="101.0" />
-      <TextField fx:id="txtLocalidadEstacion" layoutX="146.0" layoutY="151.0" />
-      <TextField fx:id="intLitrosActEstacion" layoutX="146.0" layoutY="200.0" />
-      <Button fx:id="btnAddEstacion" layoutX="393.0" layoutY="124.0" mnemonicParsing="false" onAction="#agregarEstacionDeServ" prefHeight="62.0" prefWidth="114.0" text="Agregar" />
+      <!-- Title -->
+      <Label layoutX="150.0" layoutY="30.0" styleClass="main-title" text="Nueva Estación de Servicio" textFill="#2c3e50" />
+      
+      <!-- Form Container -->
+      <VBox layoutX="100.0" layoutY="100.0" prefWidth="400.0" spacing="20.0">
+         <children>
+            <!-- Name Field -->
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="form-label" text="Nombre de la Estación:" textFill="#2c3e50" />
+                  <TextField fx:id="txtNombreEstacion" prefWidth="300.0" promptText="Ej: Shell, YPF, Axion" />
+               </children>
+            </VBox>
+            
+            <!-- Location Field -->
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="form-label" text="Localidad:" textFill="#2c3e50" />
+                  <TextField fx:id="txtLocalidadEstacion" prefWidth="300.0" promptText="Ej: Buenos Aires, Córdoba" />
+               </children>
+            </VBox>
+            
+            <!-- Initial Liters Field -->
+            <VBox spacing="5.0">
+               <children>
+                  <Label styleClass="form-label" text="Litros Iniciales:" textFill="#2c3e50" />
+                  <TextField fx:id="intLitrosActEstacion" prefWidth="300.0" promptText="Cantidad inicial de litros" />
+               </children>
+            </VBox>
+            
+            <!-- Buttons -->
+            <VBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Button fx:id="btnAddEstacion" mnemonicParsing="false" onAction="#agregarEstacionDeServ" prefHeight="45.0" prefWidth="200.0" styleClass="button, primary" text="Agregar Estación" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
    </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
 </AnchorPane>

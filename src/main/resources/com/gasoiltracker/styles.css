@@ -1,0 +1,427 @@
+/* ===== GasoilTracker CSS Stylesheet ===== */
+/* Modern, clean design with improved usability */
+
+/* ===== CSS Variables for Consistent Theming ===== */
+.root {
+    /* Color Palette */
+    -fx-primary-color: #2c3e50;
+    -fx-primary-dark: #1a252f;
+    -fx-secondary-color: #3498db;
+    -fx-accent-color: #e74c3c;
+    -fx-success-color: #27ae60;
+    -fx-warning-color: #f39c12;
+    -fx-light-gray: #ecf0f1;
+    -fx-medium-gray: #95a5a6;
+    -fx-dark-gray: #34495e;
+    -fx-white: #ffffff;
+    -fx-text-color: #2c3e50;
+    -fx-text-light: #7f8c8d;
+    
+    /* Spacing */
+    -fx-spacing-xs: 5px;
+    -fx-spacing-sm: 10px;
+    -fx-spacing-md: 15px;
+    -fx-spacing-lg: 20px;
+    -fx-spacing-xl: 30px;
+    
+    /* Border Radius */
+    -fx-border-radius-sm: 4px;
+    -fx-border-radius-md: 8px;
+    -fx-border-radius-lg: 12px;
+    
+    /* Shadows */
+    -fx-shadow-light: rgba(0, 0, 0, 0.1);
+    -fx-shadow-medium: rgba(0, 0, 0, 0.2);
+    -fx-shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== General Styling ===== */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: linear-gradient(to bottom, #ecf0f1, #d5dbdb);
+}
+
+/* ===== Main Container Styling ===== */
+.main-container {
+    -fx-background-color: linear-gradient(to bottom, -fx-primary-color, -fx-primary-dark);
+    -fx-padding: 20px;
+}
+
+/* ===== Header and Title Styling ===== */
+.main-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 2, 0.5, 0, 1);
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-white;
+    -fx-padding: 0 0 10px 0;
+}
+
+.subtitle {
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+    -fx-text-fill: -fx-light-gray;
+}
+
+/* ===== Button Styling ===== */
+.button {
+    -fx-background-color: linear-gradient(to bottom, -fx-secondary-color, derive(-fx-secondary-color, -10%));
+    -fx-text-fill: -fx-white;
+    -fx-font-weight: bold;
+    -fx-border-radius: -fx-border-radius-md;
+    -fx-background-radius: -fx-border-radius-md;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-light, 3, 0.3, 0, 1);
+    -fx-font-size: 13px;
+    -fx-transition: all 0.3s ease;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-secondary-color, 10%), -fx-secondary-color);
+    -fx-effect: dropshadow(gaussian, -fx-shadow-medium, 4, 0.4, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-secondary-color, -15%), derive(-fx-secondary-color, -5%));
+    -fx-effect: dropshadow(gaussian, -fx-shadow-light, 2, 0.2, 0, 1);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Primary Button */
+.button.primary {
+    -fx-background-color: linear-gradient(to bottom, -fx-success-color, derive(-fx-success-color, -10%));
+}
+
+.button.primary:hover {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-success-color, 10%), -fx-success-color);
+}
+
+/* Danger Button */
+.button.danger {
+    -fx-background-color: linear-gradient(to bottom, -fx-accent-color, derive(-fx-accent-color, -10%));
+}
+
+.button.danger:hover {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-accent-color, 10%), -fx-accent-color);
+}
+
+/* Warning Button */
+.button.warning {
+    -fx-background-color: linear-gradient(to bottom, -fx-warning-color, derive(-fx-warning-color, -10%));
+}
+
+.button.warning:hover {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-warning-color, 10%), -fx-warning-color);
+}
+
+/* ===== Text Field Styling ===== */
+.text-field {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-medium-gray;
+    -fx-border-width: 1px;
+    -fx-border-radius: -fx-border-radius-sm;
+    -fx-background-radius: -fx-border-radius-sm;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 13px;
+    -fx-text-fill: -fx-text-color;
+    -fx-effect: innershadow(gaussian, -fx-shadow-light, 2, 0.2, 0, 1);
+    -fx-transition: all 0.3s ease;
+}
+
+.text-field:focused {
+    -fx-border-color: -fx-secondary-color;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, derive(-fx-secondary-color, 50%), 3, 0.3, 0, 0);
+}
+
+.text-field:hover {
+    -fx-border-color: derive(-fx-secondary-color, 30%);
+}
+
+/* ===== Label Styling ===== */
+.label {
+    -fx-text-fill: -fx-white;
+    -fx-font-size: 13px;
+}
+
+.label.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-light-gray;
+}
+
+/* ===== Table Styling ===== */
+.table-view {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-medium-gray;
+    -fx-border-width: 1px;
+    -fx-border-radius: -fx-border-radius-md;
+    -fx-background-radius: -fx-border-radius-md;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-light, 5, 0.3, 0, 2);
+}
+
+.table-view:focused {
+    -fx-border-color: -fx-secondary-color;
+    -fx-border-width: 2px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, -fx-dark-gray, derive(-fx-dark-gray, -10%));
+    -fx-border-color: derive(-fx-dark-gray, -20%);
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: -fx-white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, -fx-dark-gray, derive(-fx-dark-gray, -10%));
+}
+
+.table-view .table-cell {
+    -fx-text-fill: -fx-text-color;
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 8px 12px;
+    -fx-border-color: transparent transparent -fx-light-gray transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-row-cell {
+    -fx-background-color: -fx-white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: derive(-fx-light-gray, 50%);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: derive(-fx-secondary-color, 80%);
+    -fx-text-fill: -fx-text-color;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: derive(-fx-secondary-color, 90%);
+    -fx-transition: all 0.2s ease;
+}
+
+/* ===== Date Picker Styling ===== */
+.date-picker {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-medium-gray;
+    -fx-border-width: 1px;
+    -fx-border-radius: -fx-border-radius-sm;
+    -fx-background-radius: -fx-border-radius-sm;
+    -fx-transition: all 0.3s ease;
+}
+
+.date-picker:focused {
+    -fx-border-color: -fx-secondary-color;
+    -fx-border-width: 2px;
+}
+
+.date-picker:hover {
+    -fx-border-color: derive(-fx-secondary-color, 30%);
+}
+
+.date-picker .text-field {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-effect: none;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: -fx-secondary-color;
+    -fx-background-radius: 0 -fx-border-radius-sm -fx-border-radius-sm 0;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: derive(-fx-secondary-color, 10%);
+}
+
+/* ===== Info Panel Styling ===== */
+.info-panel {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-dark-gray, 20%), -fx-dark-gray);
+    -fx-border-radius: -fx-border-radius-lg;
+    -fx-background-radius: -fx-border-radius-lg;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-medium, 8, 0.4, 0, 3);
+    -fx-transition: all 0.3s ease;
+}
+
+.info-panel:hover {
+    -fx-effect: dropshadow(gaussian, -fx-shadow-dark, 10, 0.5, 0, 4);
+}
+
+.info-panel .label {
+    -fx-text-fill: -fx-white;
+}
+
+.info-panel .title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.info-panel .value {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-warning-color;
+}
+
+/* ===== Form Styling ===== */
+.form-container {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: -fx-border-radius-md;
+    -fx-background-radius: -fx-border-radius-md;
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-light, 5, 0.3, 0, 2);
+}
+
+/* ===== File Selector Button ===== */
+.file-selector {
+    -fx-background-color: linear-gradient(to bottom, -fx-medium-gray, derive(-fx-medium-gray, -10%));
+    -fx-text-fill: -fx-white;
+    -fx-border-radius: -fx-border-radius-sm;
+    -fx-background-radius: -fx-border-radius-sm;
+    -fx-padding: 8px 15px;
+    -fx-font-size: 11px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.file-selector:hover {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-medium-gray, 10%), -fx-medium-gray);
+    -fx-effect: dropshadow(gaussian, -fx-shadow-light, 3, 0.3, 0, 1);
+}
+
+/* ===== Navigation Button ===== */
+.nav-button {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-primary-color, 20%), -fx-primary-color);
+    -fx-text-fill: -fx-white;
+    -fx-border-radius: -fx-border-radius-md;
+    -fx-background-radius: -fx-border-radius-md;
+    -fx-padding: 12px 18px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-primary-color, 30%), derive(-fx-primary-color, 10%));
+    -fx-effect: dropshadow(gaussian, -fx-shadow-medium, 5, 0.4, 0, 2);
+}
+
+/* ===== Dialog Styling ===== */
+.dialog-pane {
+    -fx-background-color: -fx-white;
+    -fx-border-color: -fx-medium-gray;
+    -fx-border-width: 1px;
+    -fx-border-radius: -fx-border-radius-lg;
+    -fx-background-radius: -fx-border-radius-lg;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-dark, 10, 0.5, 0, 5);
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: -fx-white;
+    -fx-background-radius: -fx-border-radius-lg -fx-border-radius-lg 0 0;
+    -fx-padding: 15px;
+}
+
+.dialog-pane .content {
+    -fx-padding: 20px;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-min-width: 80px;
+    -fx-pref-width: 80px;
+}
+
+/* ===== Responsive Design Helpers ===== */
+.compact-button {
+    -fx-padding: 6px 12px;
+    -fx-font-size: 11px;
+}
+
+.large-button {
+    -fx-padding: 15px 30px;
+    -fx-font-size: 16px;
+}
+
+/* ===== Utility Classes ===== */
+.text-center {
+    -fx-text-alignment: center;
+}
+
+.text-bold {
+    -fx-font-weight: bold;
+}
+
+.margin-top {
+    -fx-padding: 10px 0 0 0;
+}
+
+.margin-bottom {
+    -fx-padding: 0 0 10px 0;
+}
+
+/* ===== Specific Component Overrides ===== */
+.root-view {
+    -fx-background-color: linear-gradient(to bottom, -fx-primary-color, -fx-primary-dark);
+}
+
+.gas-station-dialog {
+    -fx-background-color: -fx-light-gray;
+    -fx-padding: 30px;
+}
+
+.tracker-main {
+    -fx-background-color: linear-gradient(to bottom, -fx-primary-color, -fx-primary-dark);
+    -fx-padding: 20px;
+}
+
+/* ===== Animation and Transitions ===== */
+.fade-in {
+    -fx-opacity: 0;
+}
+
+.slide-in {
+    -fx-translate-x: -50px;
+}
+
+/* ===== Focus Indicators ===== */
+.button:focused {
+    -fx-border-color: derive(-fx-secondary-color, 50%);
+    -fx-border-width: 2px;
+    -fx-border-insets: -2px;
+}
+
+.text-field:focused,
+.date-picker:focused {
+    -fx-border-color: -fx-secondary-color;
+    -fx-border-width: 2px;
+    -fx-border-insets: -1px;
+}
+
+/* ===== Accessibility Improvements ===== */
+.button:focused,
+.text-field:focused,
+.date-picker:focused,
+.table-view:focused {
+    -fx-effect: dropshadow(gaussian, derive(-fx-secondary-color, 50%), 5, 0.5, 0, 0);
+}
